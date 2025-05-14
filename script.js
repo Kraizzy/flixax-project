@@ -105,3 +105,20 @@
     });
   }
 });
+ const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show-on-scroll');
+      }
+    });
+  });
+
+  document.querySelectorAll('.animate-on-scroll1').forEach((el) =>
+    observer.observe(el)
+  );
+  document.querySelectorAll('.animate-on-scroll').forEach((el) =>
+    observer.observe(el)
+  );
+  document.querySelectorAll('.animate-on-scroll2').forEach((el) =>
+    observer.observe(el)
+  );

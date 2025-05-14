@@ -5,13 +5,13 @@
 } */
 body{
   background-color: #101010;
+  margin: 0;
   padding: 0;
 }
 .container{
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* margin: 0 auto; */
     background-color: #101010;
 }
 ul{
@@ -40,7 +40,7 @@ header{
   position: fixed;
   padding-bottom: 10px;
   top: 0px;
-  /* background-color: rgba(0, 0, 0, 0.40); */
+  background-color: rgba(0, 0, 0, 0.40);
   justify-content: space-between;
   padding-top: 2rem;
   z-index: 5;
@@ -539,9 +539,11 @@ header{
 }
 .fore-div{
     width: 87%;
-    height: 33.3rem;
+    height: 36.3rem;
     margin: 0 auto;
     overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 .newandHot-title{
   margin: 0 auto;
@@ -967,7 +969,9 @@ header{
 /* Section6-7 styling  */
 
 .grid-section{
-  padding: 0 3.125rem;
+  /* padding: 0 3.125rem; */
+  width: 87%;
+  margin: 0 auto;
   margin-top: 4.2275rem;
 }
 
@@ -982,7 +986,8 @@ header{
 
 .recommend-div{
   /* background-color: #828282; */
-  width: 92%;
+  width: 100%;
+  padding: 0;
   margin: 0 auto;
 }
 .rectitle-head{
@@ -990,7 +995,7 @@ header{
   justify-content: space-between;
   margin: 0 auto;
   color: white;
-  margin-bottom: 24px;
+  margin-bottom: 2rem;
 }
 .rectitle-head h2 {
   margin: 0;
@@ -1002,12 +1007,11 @@ header{
   /* Grid layout for cards */
 .rec-card-grid {
   display: grid;
-  /* width: 100%; */
-  margin: 0 auto;
-  padding: 0;
-  grid-template-columns: repeat(5, auto);
+  width: 100%;
+  margin: 1rem auto;
+  grid-template-columns: repeat(5, 19.8rem);
   grid-template-rows: repeat(3, auto);
-  gap: 48px 14.22px;
+  gap: 2.5rem 0.68rem;
   justify-content: center;
 }
 .rec-card-grid .card.hidden {
@@ -1414,7 +1418,7 @@ Filter Page CSS
   padding: 0.2rem 6rem;
   width: 82%;
   /* background-color: #7FBBFF; */
-  margin: 5rem auto;
+  margin: 5.5rem auto;
 
 }
 .video-panel{
@@ -1465,7 +1469,7 @@ Filter Page CSS
   gap: 10rem;
   align-items: center;
   padding: 3rem;
-  width: 50%;
+  width: 60%;
 }
 .info-panel{
   display: flex;
@@ -1574,13 +1578,14 @@ Filter Page CSS
   padding: 0.68rem;
   align-items: center;
   cursor: pointer;
+  margin: 0;
   max-height: 6rem;
   justify-content: space-between;
   border-radius: 4px;
   background: #FA528C;
 }
 .back-arrow{
-  display: flex;
+  display: none;
   margin: 1rem auto;
   width: 3.125rem;
   height: 3.125rem;
@@ -1597,7 +1602,12 @@ Filter Page CSS
   display: none;
   grid-template-columns: repeat(6, 5rem);
   grid-template-rows: repeat(10, 68.19px);
-  gap: 0.863rem;
+  gap: 1rem;
+  padding-left: 0.2rem;
+  margin: 0 auto;
+  height: 20rem;
+  width: 100%;
+  /* background-color: #8A8A8A; */
   margin-top: 20px;
   transition: all 0.5s ease;
   }
@@ -1819,7 +1829,6 @@ Rewards CSS Styling
   height: 70vh;
   width: 100%;
   padding: 0;
-  margin: 0 auto;
   position: relative;
   background: linear-gradient(180deg, #fbba2d, #F4854A 30%, #F67361 50%, #000000 100%);
   display: flex;
@@ -1870,7 +1879,7 @@ Rewards CSS Styling
   position: absolute;
   top: 25rem;
   margin: 0 auto;
-  margin-left: 0.5rem;
+  margin-left: 1rem;
   width: 94.5%;
   display: flex;
   padding: 2.2104rem;
@@ -2359,4 +2368,43 @@ User CSS Styling
     font-style: normal;
     font-weight: 600;
     line-height: 25.2px; /* 112.5% */
+}
+.animate-on-scroll1{
+   opacity: 0;
+  transform: translateY(10rem);
+  transition: all 0.6s ease-out;
+}
+.show-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-on-scroll{
+  opacity: 0;
+  transform: translateX(10rem);
+  transition: all 0.6s ease-out;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.animate-on-scroll::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari, Opera */
+}
+.show-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-on-scroll2{
+  opacity: 0;
+  transform: translateX(-10rem);
+  transition: all 0.6s ease-out;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.animate-on-scroll2::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari, Opera */
+}
+.show-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
 }
