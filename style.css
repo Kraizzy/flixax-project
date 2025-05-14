@@ -5,12 +5,11 @@
 } */
 body{
   background-color: #101010;
+  padding: 0;
 }
 .container{
     display: flex;
     flex-direction: column;
-    gap: px;
-    /* padding: 0 80px; */
     width: 100%;
     /* margin: 0 auto; */
     background-color: #101010;
@@ -41,10 +40,10 @@ header{
   position: fixed;
   padding-bottom: 10px;
   top: 0px;
-  background-color: rgba(0, 0, 0, 0.40);
+  /* background-color: rgba(0, 0, 0, 0.40); */
   justify-content: space-between;
   padding-top: 2rem;
-  z-index: 2;
+  z-index: 5;
   width: 100%;
 
 }
@@ -87,7 +86,7 @@ header{
   display: inline-flex;
   color: #fff;
   padding: 0 0.625rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
 }
@@ -119,31 +118,40 @@ header{
 .search-div{
   position: relative;
   align-items: center;
-  /* margin-right: 48px; */
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding-left: 38px;
+  width: 26rem;
+  gap: 1.5rem;
+}
+.search{
+  display: flex;
+  align-items: center;
 }
 
 .search-icon{
   position: absolute;
   left: 12px;
-  top: 22%;
+  top: 50%;
   width: 20px;
-  height:20px
+  height:20px;
   transform: translateY(-50%);
   pointer-events:none;
 }
 .search-box{
   display: inline;
-  border-radius: 20px;
+  background-color: transparent;
   font-weight: 500;
   line-height: normal;
   font-size: 14px;
   font-family: "DM San", sans-serif;
-  padding-left: 38px;
   height: 2.2rem;
   color: white;
-  width: 28.25rem;
+  outline: none;
+  width: 21.5rem;
   border-style: none;
-  background-color: rgba(255, 255, 255, 0.2);
+  
 }
 .search-box::placeholder{
   color: rgba(255, 255, 255, 0.60);
@@ -248,6 +256,36 @@ header{
 .user-ul{
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 0;
+}
+.user-link{
+  display: inline-block;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+}
+.user-link:hover{
+  cursor: pointer;
+  background: var(--Flixax-gradient, linear-gradient(131deg, #FFBE00 3.18%, #FF55FD 53.67%, #7FBBFF 98.69%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* User div */
+.user-div{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  vertical-align: center;
+  height: 24px;
+  gap: 4px;
+}
+.user-ul{
+  display: flex;
+  justify-content: center;
   gap: 40px;
   padding: 0;
 }
@@ -267,80 +305,229 @@ header{
 
 /* Hero Section Styling */
 
-.hero-slider input { display: flex; }
-
-/* container */
-.hero-slider {
+.hero-section{
   position: relative;
   width: 100%;
-  height: 40.25rem;
+  height: 87vh; /* Like your reference */
+  background-color: #101010;
   overflow: hidden;
-  margin: 0 auto;
-  margin-bottom: 64px;
 }
+.hero-content{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  text-align: left;
+  gap: 2rem;
+  bottom: 6.813rem;
+  left: 13.575rem;
+  color: aliceblue;
+  z-index: 3;
+}
+.hero-content h1{
+  color: #FFF;
+  font-family: Nunito;
+  font-size: 32px;
+  width: 20.125rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 130%; /* 41.6px */
+}
+.hero-content button{
+  border-radius: 4px;
+  gap: 0.625rem;
+  border: none;
+  width: 12.8125rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem;
+  color: #FFF;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.5rem;
+  display: flex;
 
-/* slides stack */
-.slides .slide {
-  position: absolute; top:0; left:0;
-  width: 100%; height: 100%;
-  opacity: 0; transition: opacity .6s ease;
+  background: #FA528C;
+}
+.hero-content span{
+  display: flex;
+  width: 1.149rem;
+  height: 1.243rem;
 }
 .slides{
-  border-top: 1px solid #000;
-  z-index: 1;
-  width: 100vw;
-  background-color: #313131;
-  background: lightgray 0px -77.048px / 100% 116.475% no-repeat;
-  box-shadow: -32px 0px 20px 0px rgba(0, 0, 0, 0.70) inset, 0px -50px 40px 0px rgba(16, 16, 16, 0.70) inset, 0px 100px 20px 0px rgba(16, 16, 16, 0.70) inset;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
-/* show active slide */
-#slide1:checked ~ .slides .slide1,
-#slide2:checked ~ .slides .slide2,
-#slide3:checked ~ .slides .slide3 {
-  opacity: 1; z-index:1;
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
 }
-
-/* make img fill slide */
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
 .slide img {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-/* arrows */
-.arrow {
-  position: absolute; top:50%; transform: translateY(-50%);
-  font-size:1rem; color:#fff; padding:.3rem .3rem;
-  background:rgba(0,0,0,0.3); cursor:pointer; user-select:none;
-  border-radius:50%;
-  width: 1.875rem; height: 1.875rem;
-  z-index: 1;
-  
+.shadow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(to right, rgba(0, 0, 0, 0.95), transparent 30%, transparent 70%, rgba(0, 0, 0, 0.95)); */
+  box-shadow: 0px 1000px 4px 0px rgba(16, 16, 16, 0.05) inset, 32px 4px 20px 0px #101010 inset, -32px 0px 20px 0px #101010 inset, 0px -100px 40px 0px #101010 inset, 0px 100px 20px 0px #101010 inset;
+  z-index: 3;
+  pointer-events: none;
 }
-.arrow.prev { left:1rem; }
-.arrow.next { right:1rem; }
+.dots {
+  position: absolute;
+  bottom: 5rem;
+  right: 25.0625rem;
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
 
-/* overlay text */
-.hero-content {
-  position: absolute; top:50%; left:50%;
-  transform: translate(-50%,-50%);
-  color:#fff; text-shadow:0 2px 8px rgba(0,0,0,0.6);
-}
-
-/* dots */
-.nav-dots {
-  position: absolute; bottom:1rem; left:50%;
-  transform: translateX(-50%); display:flex; gap:.5rem;
-  z-index: 2;
-}
 .dot {
-  width: 6px; height:6px; border-radius:50%;
-  background:rgba(255,255,255,0.5); cursor:pointer;
-  z-index: 2;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: all 0.3s ;
 }
-#slide1:checked ~ .nav-dots label[for="slide1"],
-#slide2:checked ~ .nav-dots label[for="slide2"],
-#slide3:checked ~ .nav-dots label[for="slide3"] {
-  background:#fff;
+
+.dot.active {
+  width: 24px;
+  border-radius: 20px;
+  opacity: 1;
 }
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.3s ease;
+}
+.slider-arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.slider-prev {
+  left: 7.75rem;
+}
+
+.slider-next {
+  right: 7.75rem;
+}
+
+.slider-arrow svg {
+  width: 30px;
+  height: 30px;
+  fill: white;
+  pointer-events: none;
+}
+
+.slide {
+  display: none;
+  /* your styles for slide content */
+}
+
+.slide.active {
+  display: block;
+}
+
+/* Continue Watching styling  */
+.cont-card-content {
+  padding-top: 5px;
+  margin-top: 5px;
+  text-align: left;
+}
+.cont-card-content .title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+  color: white;
+  margin: 4px 0 0;
+}
+.cont-card-content .progress-text {
+  font-size: 1rem;
+  font-family: "Nunito", sans-serif;
+  color: #ff4081;
+  font-weight: 500;
+  margin: 2px 0 0;
+}
+
+.cont-card-content .progress-text span {
+  color: #aaa;
+}
+/* Progress Bar */
+.progress-bar {
+  height: 4px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #ff4081;
+  width: 0%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+.cont-card {
+    display: flex;
+    flex-direction: column; 
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    width: auto;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+  }
+   /* Image inside card */
+.cont-card-image {
+    width: 100%;
+    display: block;
+    height: 24rem;
+    object-fit: cover;
+    border-radius: 5.6px;
+  }
+   /* 'New' ribbon */
+.new-ribbon {
+    position: absolute;
+    left: -18.189px;
+    top: 7px;
+    width: 77.718px;
+    height: 15.644px;
+    background-color: #FF0000;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 14.22px;
+    font-style: normal;
+    font-family: "Nunito", sans-serif;
+    font-weight: 500;
+    transform: rotate(-45deg);
+  }
 
 /* New and Hot styling */
 .section1-2-div{
@@ -351,8 +538,10 @@ header{
     margin-bottom: 63.66px;
 }
 .fore-div{
-    width: 95%;
+    width: 87%;
+    height: 33.3rem;
     margin: 0 auto;
+    overflow-y: hidden;
 }
 .newandHot-title{
   margin: 0 auto;
@@ -365,13 +554,12 @@ header{
   color: aliceblue;
 }
 .newandHot-title h2{
-    font-size: 32.893px;
+    font-size: 2rem;
     font-family: "Nunito", sans-serif;
     font-weight: 600;
     font-style: normal;
     line-height: 32.893px;
     color: #FFF;
-
 }
 .section-title{
     display: flex;
@@ -403,28 +591,38 @@ header{
   }
 .card-grid{
     display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
     gap: 16.6px;
-    padding: 0px 10px;
-    overflow: auto;
-    flex-wrap: nowrap;
-    overflow-x: hidden;
+    padding: 2rem 1rem;
+    scrollbar-width: none;
   }
+.card-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
 .card {
     display: flex;
     flex-direction: column; 
-    width: 170.667px;
-    height: 277.556px;
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    width: 17.4rem;
     position: relative;
     cursor: pointer;
     margin-bottom: 0;
     overflow: hidden;
     border-radius: 8px;
+    will-change: transform;
+    transition: transform 0.3s ease-in-out;
   }
+.card:hover{
+  transform: scale(1.1);
+}
    /* Image inside card */
 .card-image {
     width: 100%;
-    display: block ;
-    height: 227.556px;
+    display: block;
+    height: 24rem;
     object-fit: cover;
     border-radius: 5.6px;
   }
@@ -448,11 +646,11 @@ header{
   /* Card content */
 .card-content {
     padding-top: 5px;
-    margin-top: 5px;
-    text-align: left;
+    margin-top: 1rem;
+    transition: opacity 0.3s ease-in-out;
     }
 .card-content p {
-    font-size: 12;
+    font-size: 1.5rem;
     color: #FFF;
     font-family: Nunito;
     font-style: normal;
@@ -461,7 +659,114 @@ header{
     color: #FFFFFF;
     margin: 0;
   }
+.card:hover .card-content{
+  opacity: 0;
+  pointer-events: none;
+}
 
+.card-overlay {
+  position: absolute;
+  top: 8.3rem;
+  left: 0;
+  width: 94.4%;
+  height: 65.12%;
+  background: #222;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding:  0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: left;
+  justify-content: center;
+  border-radius: 0px 0px 9px 9px;
+  z-index: 1;
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+.card-overlay h3 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Nunito", sans-serif;
+}
+
+.card-overlay .genre {
+  color: #8A8A8A;;
+  font-size: 0.85rem;
+  width: 100%;
+  margin-bottom: 8px;
+  font-family: "Nunito", sans-serif;
+}
+
+.card-overlay .description {
+  font-size: 1.313rem;
+  margin-bottom: 1rem;
+  width: 16.88rem;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.4;
+  font-family: "Nunito", sans-serif;
+}
+
+.watch-button {
+  padding: 8px 16px;
+  background-color: #ff4081;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  width: fit-content;
+
+}
+/* Most trending */
+.card-overlay-most-trend{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 95%;
+  height: 18%;
+  background: #313131;
+  color: white;
+  transition: opacity 0.3s ease;
+  padding:  0.7rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.475rem;
+  text-align: left;
+  border-radius: 0px 0px 4.399px 4.399px;
+  justify-content: center;
+  z-index: 1;
+}
+.card-overlay-most-trend h3{
+  margin: 0;
+  color: #FFF;
+  font-family: Nunito;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2rem;
+}
+.trend-rank{
+  color: #EDBE00;
+  border-radius: 4.399px;
+  background: rgba(237, 190, 0, 0.20);
+  align-items: center;
+  text-align: left;
+  margin-left: 0;
+  font-size: 0.875rem;
+  font-family: "Nunito", sans-serif;
+  justify-content: flex-start;
+  padding: 0.275rem 0.412rem;
+}
+.trend-rank p{
+  margin: 0;
+}
   /* Sectioin4-5 styling */
 .section4-5-div{
     display: flex;
@@ -495,15 +800,18 @@ header{
 } */
 .arrow-div{
     display: flex;
-    gap: 18.311px;
+    gap: 1.5rem;
+    width: 5.94rem;
     align-items: center;
 }
 .arrow-icon{
-    height: 24.91px;
-    width: 24px;
+    height: 100%;
+    width: 25%;
+    margin: 0 auto;
 }
 .arrow-icon:hover{
     background-color: rgba(250, 82, 140, 0.50);
+    border-radius: 0.625rem;
     color: #FFF;
     cursor: pointer;
 }
@@ -517,8 +825,12 @@ header{
     background: linear-gradient(180deg, rgba(16, 16, 16, 0.20) 0%, rgba(252, 125, 135, 0.20) 100%);
 }
 .img-div{
-    height: 274.112;
+    height: auto;
     object-fit: cover;
+}
+.img-div img{
+  height: 100%;
+  width: 100%;
 }
 .s4typography{
     width: 65.165rem;
@@ -563,7 +875,7 @@ header{
 
 /* You might also Like  */
 .section5{
-  width: 95%;
+  width: 85%;
   margin: 0 auto;
 }
 .section-title{
@@ -579,23 +891,26 @@ header{
   font-size: 32px;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
+  margin: 0;
   font-style: normal;
   line-height: 32.893px;
 }
 .arrow-div{
   display: flex;
-  gap: 18.311px;
+  gap: 1.25rem;
   align-items: center;
 
 }
 .arrow-icon{
-  height: 24.91px;
-  width: 13.346px;
+  height: 100%;
+  width: 100%;
 }
 .rows{
   display: flex;
   flex-direction: column;
-  width: 297.44px;
+  width: auto;
+  flex-shrink: 0;
+  min-width: 10rem;
   gap: 20.38px;
   
 }
@@ -603,7 +918,7 @@ header{
   display: flex;
   gap: 13.58px;
   padding: 13.584px 0px;
-  width: 295.44px;
+  width: 100%;
   
 }
 .typography h4{
@@ -637,16 +952,25 @@ header{
   padding: 10px 0px;
   margin: 20px 0px;
   gap: 32px;
-  overflow: auto;
+  width: 100%;
   flex-wrap: nowrap;
-  overflow-x: hidden;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+.row-grid::-webkit-scrollbar {
+  display: none;
+}
+.row-grid {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
 }
 /* Section6-7 styling  */
 
 .grid-section{
-  width: 100%;
+  padding: 0 3.125rem;
   margin-top: 4.2275rem;
 }
+
 .section6-7-div{
   display: flex;
   flex-direction: column;
@@ -656,42 +980,38 @@ header{
 }
 /* We recommmend Section  */
 
+.recommend-div{
+  /* background-color: #828282; */
+  width: 92%;
+  margin: 0 auto;
+}
 .rectitle-head{
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  width: 94%;
-  height: 28.44px;
   color: white;
   margin-bottom: 24px;
 }
 .rectitle-head h2 {
-  margin-top: 0;
+  margin: 0;
   font-weight: 600;
   font-style: normal;
-  font-size: 32px;
+  font-size: 2rem;
   font-family: "Nunito", sans-serif;
-  line-height: 25.6px; /* 80% */
-  letter-spacing: 0.64px;
-}
-.navigation{
-  display: flex;
-  justify-content: flex-end;
-  gap: 18.8px;
-
-}
-.navigation svg{
-  width: 12.444px;
-  height: 28.444px;
 }
   /* Grid layout for cards */
 .rec-card-grid {
   display: grid;
-  width: 100%;
-  grid-template-columns: repeat(9, 176.667px);
-  grid-template-rows: repeat(3, 278.936px);
+  /* width: 100%; */
+  margin: 0 auto;
+  padding: 0;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(3, auto);
   gap: 48px 14.22px;
   justify-content: center;
+}
+.rec-card-grid .card.hidden {
+  display: none;
 }
  /* Card content */
  .rec-card-content {
@@ -757,7 +1077,7 @@ header{
   align-items: start; /* Align items to the top */
   /* max-width: 90rem; */
   height: 250px;
-  width: 92%;
+  width: 91%;
   padding: 60px 10px;
 }
 
@@ -843,11 +1163,12 @@ header{
   margin-top: 60px;
   display: flex;
   margin: 0 auto;
+  padding: 0 2.5rem;
   font-family: "Inter", sans-serif;
   justify-content: space-between; /* Space between contact and copyright */
   align-items: center;
   /* max-width: 1440px; */
-  width: 95%;
+  width: 91%;
   font-size: 0.8em;
   color: #CCCCCC;
 }
@@ -908,11 +1229,16 @@ Filter Page CSS
 /* Filter Box Style */
 .div-container{
   margin: 0 auto;
-  margin-top: 40px;
-  width: 80.25rem;
+  margin-top: 7.4rem;
+  width: 100%;
+}
+.filter{
+  width: 90%;
+  margin: 0 auto;
 }
 .filter-buttons{
-  width: 118px;
+  width: 10rem;
+  height: 2.95rem;
   padding: 10px 20px;
   background-color: #313131;
   gap: 10px;
@@ -922,7 +1248,7 @@ Filter Page CSS
   border-radius: 4px;
   color: #FFF;
   font-family: "DM Sans", sans-serif;
-  font-size: 14px;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -935,7 +1261,7 @@ Filter Page CSS
 .filter-list span{
   color: #828282;
   font-family: "DM Sans";
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -943,10 +1269,11 @@ Filter Page CSS
 .filter-list p{
   color: #FFF;
   font-family: "DM Sans";
-  font-size: 16px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-bottom: 1.3rem;
 }
 .filter-list{
   padding: 10px 0px;
@@ -954,10 +1281,10 @@ Filter Page CSS
 .filter-grid{
   /* background-color: #FA528C; */
   display: grid;
-  width: 80rem;
-  grid-template-columns: repeat(9, 120px);
-  grid-template-rows: repeat(2, 40px);
-  gap: 16px 16px;
+  width: 100%;
+  grid-template-columns: repeat(8, 10rem);
+  grid-template-rows: repeat(2, 3rem);
+  gap: 1rem 1rem;
 }
 
 /* Filter Section Style  */
@@ -965,15 +1292,15 @@ Filter Page CSS
   color: white;
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  width: 1280px;
+  gap: 1.5rem;
   margin: 60px auto;
 }
 .filter-container{
   display: flex;
   border-radius: 4px;
   gap: 15px;
-  height: 291px;
+  height: 18.19rem;
+  width: 100%;
   background-color: #222222;
   padding: 12px 16px;
 }
@@ -981,10 +1308,8 @@ Filter Page CSS
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  width: 64rem;
   margin-bottom: 0px;
   padding: 16px 0px;
-  height: 267px;
   /* background-color: blueviolet; */
 }
 .filter-typo{
@@ -993,12 +1318,11 @@ Filter Page CSS
   gap: 18px;
 }
 .filter-typo h4, p{
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin: 0 auto;
 }
 .filter-typo h4{
   font-family: "Nunito", sans-serif;
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-bottom: 18px;
   color: #fff;
   font-weight: 800;
@@ -1023,7 +1347,7 @@ Filter Page CSS
 }
 .viewcount{
   display: flex;
-  gap: 4px;
+  width: 10%;
   align-items: center;
 }
 .viewcount p{
@@ -1085,52 +1409,77 @@ Filter Page CSS
 
 .video-container{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  top: 3.5rem;
-  left: 6%;
-  height: 100vh;
-  gap: 3rem;
+  /* align-items: center; */
+  height: 87%;
   padding: 0.2rem 6rem;
-  width: 80%;
+  width: 82%;
   /* background-color: #7FBBFF; */
-  margin: 0px auto;
+  margin: 5rem auto;
 
 }
 .video-panel{
   display: flex;
-  /* width: 596px; */
-  padding: 2rem;
-  background-color: brown;
-  flex: 50%;
+  flex-direction: column;
+  padding: 1rem;
+  height: 51.9rem;
+  padding-left: 1rem;
+  position: relative;
+  align-items: center;
+}
+.video-controls {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(16, 16, 16, 0.50);
+  align-items: center;
+  padding:  1rem;
+  bottom: 1rem;
+  height: 3rem;
+  width: 84%;
+  z-index: 2;
+  position: absolute;
+}
+.right-control, 
+.left-control{
+  display: flex;
+  justify-content: space-between;
+  width: 16%;
+  margin: 0 1rem;
+}
+.right-control,
+.left-control svg{
+  cursor: pointer;
+}
+.video-controls button {
+  top: 1px;
+  padding: 10px;
+  border: none;
+  background-color: #ff4081;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 5px;
 }
 .big-div{
   /* background-color: #FA528C; */
   display: flex;
-  /* justify-content: center; */
+  gap: 10rem;
   align-items: center;
   padding: 3rem;
-  width: auto;
-  flex: 50%;
+  width: 50%;
 }
 .info-panel{
   display: flex;
   gap: 2.5rem;
   margin-bottom: 0;
-  /* height: 535px; */
-  padding: 3.725rem 0;
+  padding: 1rem 0;
   border-bottom:  1px solid rgba(255, 255, 255, 0.30);
-  /* background-color: blueviolet; */
   flex-direction: column;
-  /* width: 439px; */
-  /* flex: 1;  */
+  width: 68%;
 }
 .content-head{
   display: flex;
   gap: 1.5rem;
   flex-direction: column;
-  /* background-color: aquamarine; */
 }
 .content-head h3{
   display: flex;
@@ -1225,9 +1574,46 @@ Filter Page CSS
   padding: 0.68rem;
   align-items: center;
   cursor: pointer;
+  max-height: 6rem;
   justify-content: space-between;
   border-radius: 4px;
   background: #FA528C;
+}
+.back-arrow{
+  display: flex;
+  margin: 1rem auto;
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 0.35rem;
+  border-radius: 50%;
+  background-color: rgba(252, 125, 135, 0.20);
+}
+.back-arrow svg{
+  margin: 0.5rem auto;
+  
+}
+
+.episode-grid {
+  display: none;
+  grid-template-columns: repeat(6, 5rem);
+  grid-template-rows: repeat(10, 68.19px);
+  gap: 0.863rem;
+  margin-top: 20px;
+  transition: all 0.5s ease;
+  }
+.episode-grid.visible{
+  display: grid;
+}
+.episode{
+  background-color: #FA528C;
+  border-radius: 0.36rem;
+  padding: 1rem 1.56rem;
+  text-align: center;
+  color: #FFF;
+  font-family: "Nunito";
+  font-weight: 500;
+  font-size: 1.54rem;
+  font-style: normal;
 }
 .allepisodes{
   display: flex;
@@ -1246,10 +1632,7 @@ Filter Page CSS
   display: flex;
   margin: 0 auto;
   height: 3rem;
-  /* position: absolute;
-  right: 9.375rem;
-  top: 50%; */
-  width: 3.57rem;
+  width: 3rem;
   padding: 8px;
   border-radius: 50%;
   background-color: rgba(252, 125, 135, 0.20);
@@ -1257,14 +1640,47 @@ Filter Page CSS
 .next-arrow svg{
   display: flex;
   margin-top: 9.25px;
-  padding: 0px;
-  margin-bottom: 0px;
 }
 .next-arrow a{
   display: flex;
   margin: 0 auto;
 }
+/* Sound wave animation */
+.sound-wave {
+  display: flex;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  gap: 2px;
+}
 
+.bar {
+  width: 3px;
+  height: 10px;
+  background: white;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes wave {
+  0%, 100% {
+    height: 10px;
+  }
+  50% {
+    height: 20px;
+  }
+}
+
+.hidden {
+  display: none;
+}
 
 
 /* ============================
@@ -1274,8 +1690,8 @@ My List CSS Styling
 .wrapper {
   position: absolute;
   top: 5rem;
-  left: 6rem;
-  width: 89.9%;
+  left: 7.4rem;
+  width: 85%;
   padding: 20px;
 }
 
@@ -1284,17 +1700,17 @@ My List CSS Styling
   border-bottom: 1.2px solid #313131;
   align-items: center;
   gap: 3.09rem;
-  padding: 5px;
+  padding:  0 0.03rem;
   margin-bottom: 1.25rem;
 }
-.tabs ul{
-  padding-bottom: 0.625rem;
-} 
-.tab-label {
+.tab-label{
   display: inline-block;
   padding: 6px;
   cursor: pointer;
   position: relative;
+  margin: 0;
+  text-align: left;
+  font-family: "Nunito";
   font-size: 1rem;
   color: #FFF;
   font-weight: 500;
@@ -1454,7 +1870,7 @@ Rewards CSS Styling
   position: absolute;
   top: 25rem;
   margin: 0 auto;
-  margin-left: 1.13rem;
+  margin-left: 0.5rem;
   width: 94.5%;
   display: flex;
   padding: 2.2104rem;
@@ -1917,7 +2333,23 @@ User CSS Styling
     cursor: pointer;
     padding: 16.8px 0px;
     border-bottom: 0.7px solid rgba(255, 255, 255, 0.10);
-    /* width: 500.4px; */
+    width: 100%;
+}
+.reward_daily{
+  background: rgba(237, 190, 0, 0.10);
+  position: absolute;
+  top: 21rem;
+  right: 20rem;
+  border-radius: 0.35rem;
+  padding: 0.2rem 1.4rem;
+  font-size: 1rem;
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  color: #EDBE00;
+  align-items: center;
 }
 .wallet-items p{
     margin: 0;
