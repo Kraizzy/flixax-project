@@ -193,14 +193,9 @@
     <!-- For You Page Content -->
 
     <div class="video-container" >
-      <div class="back-arrow">
-  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-  <path d="M8.41901 8.1166C8.17554 8.1237 7.94438 8.22526 7.77448 8.3998L1.52448 14.6498C1.34873 14.8256 1.25 15.064 1.25 15.3126C1.25 15.5612 1.34873 15.7997 1.52448 15.9755L7.77448 22.2255C7.86086 22.3155 7.96434 22.3873 8.07883 22.4368C8.19333 22.4863 8.31654 22.5124 8.44127 22.5137C8.56599 22.5149 8.68972 22.4913 8.80519 22.4442C8.92067 22.397 9.02558 22.3273 9.11378 22.2391C9.20197 22.1509 9.27169 22.046 9.31883 21.9305C9.36598 21.815 9.38961 21.6913 9.38834 21.5666C9.38708 21.4419 9.36093 21.3187 9.31145 21.2042C9.26197 21.0897 9.19013 20.9862 9.10016 20.8998L4.4505 16.2501H27.8123C27.9365 16.2519 28.0599 16.2289 28.1752 16.1826C28.2905 16.1363 28.3954 16.0675 28.4839 15.9803C28.5723 15.8931 28.6426 15.7891 28.6905 15.6745C28.7385 15.5599 28.7632 15.4369 28.7632 15.3126C28.7632 15.1884 28.7385 15.0654 28.6905 14.9508C28.6426 14.8362 28.5723 14.7322 28.4839 14.645C28.3954 14.5578 28.2905 14.489 28.1752 14.4427C28.0599 14.3963 27.9365 14.3734 27.8123 14.3751H4.4505L9.10016 9.72549C9.23541 9.59376 9.32775 9.42428 9.36508 9.23921C9.40241 9.05415 9.38301 8.86212 9.3094 8.68827C9.2358 8.51441 9.11142 8.36683 8.95255 8.26483C8.79369 8.16283 8.60773 8.11116 8.41901 8.1166Z" fill="#FA528C"/>
-</svg>
-      </div>
-            <div class="video-panel">
-                <video  poster="assets\sample video.png" width="596" height="830"> 
-                 <source src="/" type="video/mp4">
+            <div class="foryou-video-panel">
+                <video  > 
+                 <source src="assets\12831797_1080_1920_30fps.mp4" type="video/mp4">
                     browser does not support
                 </video>
                 <!-- Custom Controls -->
@@ -281,7 +276,8 @@
                      <p>
                          Lorem ipsum dolor sit amet consectetur. Nullam enim ornare duis vitae. Nulla molestie eu nunc nec egestas donec risus mi. Magna ullamcorper facilisis tristique pharetra at orci. Adipiscing dictumst est arcu ut. Imperdiet donec venenatis eu eu rhoncus mattis proin imperdiet ut. 
                          Odio a facilisis fermentum sollicitudin libero. In et malesuada dolor adipiscing congue cursus. Neque augue sit cursus tortor sollicitudin. Id massa scelerisque condimentum tincidunt dictum vitae tempor. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, nemo nostrum. Assumenda nostrum enim architecto voluptate animi! Tenetur commodi in magni nostrum dignissimos adipisci, sed corporis alias blanditiis, officiis neque.
-                     <div id="toggleButton" class="episode-dropmenu">
+                     </p>
+                         <div id="toggleButton" class="episode-dropmenu" onclick="window.location.href='episodepage.html'">
                          <div class="allepisodes">
                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                  <path d="M7.5 3V4.5H16.5V3H7.5ZM5.25 5.25V6.75H18.75V5.25H5.25ZM3 7.5V21H21V7.5H3ZM4.5 9H19.5V19.5H4.5V9ZM9.75 10.2188V18.2812L15.375 14.8828L16.4531 14.25L15.375 13.6172L9.75 10.2188ZM11.25 12.8672L13.5703 14.25L11.25 15.6328V12.8672Z" fill="white"/>
@@ -294,62 +290,6 @@
                              <path d="M6.76479 1.49299C6.95957 1.49866 7.1445 1.57992 7.28042 1.71955L17.0304 11.4695C17.171 11.6102 17.25 11.8009 17.25 11.9998C17.25 12.1987 17.171 12.3894 17.0304 12.5301L7.28042 22.2801C7.21131 22.3521 7.12853 22.4095 7.03693 22.4491C6.94534 22.4887 6.84676 22.5096 6.74699 22.5106C6.64721 22.5117 6.54823 22.4928 6.45585 22.455C6.36346 22.4173 6.27954 22.3615 6.20898 22.291C6.13842 22.2204 6.08265 22.1365 6.04493 22.0441C6.00722 21.9517 5.98831 21.8528 5.98933 21.753C5.99034 21.6532 6.01125 21.5546 6.05084 21.463C6.09043 21.3714 6.14789 21.2887 6.21987 21.2195L15.4396 11.9998L6.21987 2.7801C6.11167 2.67472 6.0378 2.53913 6.00794 2.39108C5.97807 2.24303 5.99359 2.0894 6.05248 1.95032C6.11136 1.81124 6.21086 1.69317 6.33796 1.61157C6.46505 1.52997 6.61382 1.48864 6.76479 1.49299Z" fill="white"/>
                            </svg>
                           </div>
-                          <div id="episodeGrid" class="episode-grid">
-                              <!-- Example 24 episodes -->
-                              <!-- Add data-episode="X" to target them later -->
-                              <div class="episode" data-episode="1">
-                                <div class="sound-wave hidden">
-                                  <div class="bar"></div>
-                                  <div class="bar"></div>
-                                  <div class="bar"></div>
-                                </div>
-                                1
-                              </div>
-                              <div class="episode" data-episode="2">2</div>
-                              <div class="episode" data-episode="3">3</div>
-                              <div class="episode" data-episode="4">4</div>
-                              <div class="episode" data-episode="5">5</div>
-                              <div class="episode" data-episode="6">6</div>
-                              <div class="episode" data-episode="7">7</div>
-                              <div class="episode" data-episode="8">8</div>
-                              <div class="episode" data-episode="9">9</div>
-                              <div class="episode" data-episode="10">10</div>
-                              <div class="episode" data-episode="11">11</div>
-                              <div class="episode" data-episode="12">12</div>
-                              <div class="episode" data-episode="13">13</div>
-                              <div class="episode" data-episode="14">14</div>
-                              <div class="episode" data-episode="15">15</div>
-                              <div class="episode" data-episode="16">16</div>
-                              <div class="episode" data-episode="17">17</div>
-                              <div class="episode" data-episode="18">18</div>
-                              <div class="episode" data-episode="19">19</div>
-                              <div class="episode" data-episode="20">20</div>
-                              <div class="episode" data-episode="21">21</div>
-                              <div class="episode" data-episode="22">22</div>
-                              <div class="episode" data-episode="23">23</div>
-                              <div class="episode" data-episode="24">24</div>
-                              <!-- <div class="episode" data-episode="25">25</div>
-                              <div class="episode" data-episode="26">26</div>
-                              <div class="episode" data-episode="27">27</div>
-                              <div class="episode" data-episode="28">28</div>
-                              <div class="episode" data-episode="29">29</div>
-                              <div class="episode" data-episode="30">30</div>
-                              <div class="episode" data-episode="31">31</div>
-                              <div class="episode" data-episode="32">32</div>
-                              <div class="episode" data-episode="33">33</div>
-                              <div class="episode" data-episode="34">34</div>
-                              <div class="episode" data-episode="35">35</div>
-                              <div class="episode" data-episode="36">36</div>
-                              <div class="episode" data-episode="37">37</div>
-                              <div class="episode" data-episode="38">38</div>
-                              <div class="episode" data-episode="39">39</div> -->
-                              <!-- Add more as needed... -->
-                          </div>
-                       <div class="pagination hidden" id="pagination">
-                         <button class="button" onclick="showPage(1)">1–24</button>
-                         <button class="button" onclick="showPage(2)">25–48</button>
-                       </div>
-                       
                  </div>
              </div>
              <div class="next-arrow">
@@ -393,35 +333,35 @@
         });
       });
 
-  // Button and episode grid reference
-  const toggleBtn = document.getElementById('toggleButton');
-  const episodeGrid = document.getElementById('episodeGrid');
-  const episodes = document.querySelectorAll('.episode');
+  // // Button and episode grid reference
+  // const toggleBtn = document.getElementById('toggleButton');
+  // const episodeGrid = document.getElementById('episodeGrid');
+  // const episodes = document.querySelectorAll('.episode');
 
-  // Toggle visibility of episode grid
-  toggleBtn.addEventListener('click', () => {
-    episodeGrid.classList.toggle("visible");
-  });
+  // // Toggle visibility of episode grid
+  // toggleBtn.addEventListener('click', () => {
+  //   episodeGrid.classList.toggle("visible");
+  // });
 
-  // Episode click to simulate playing and show sound wave
-  episodes.forEach(episode => {
-    episode.addEventListener('click', () => {
-      // Hide all sound waves
-      document.querySelectorAll('.sound-wave').forEach(wave => {
-        wave.classList.add('hidden');
-      });
+  // // Episode click to simulate playing and show sound wave
+  // episodes.forEach(episode => {
+  //   episode.addEventListener('click', () => {
+  //     // Hide all sound waves
+  //     document.querySelectorAll('.sound-wave').forEach(wave => {
+  //       wave.classList.add('hidden');
+  //     });
 
-      // Show sound wave on clicked episode
-      const wave = episode.querySelector('.sound-wave');
-      if (wave) wave.classList.remove('hidden');
+  //     // Show sound wave on clicked episode
+  //     const wave = episode.querySelector('.sound-wave');
+  //     if (wave) wave.classList.remove('hidden');
 
-      // Log or navigate
-      const episodeNumber = episode.dataset.episode;
-      console.log(`Playing Episode ${episodeNumber}`);
-      // Uncomment below line if you want to navigate
-      // window.location.href = `/episode/${episodeNumber}`;
-    });
-  });
+  //     // Log or navigate
+  //     const episodeNumber = episode.dataset.episode;
+  //     console.log(`Playing Episode ${episodeNumber}`);
+  //     // Uncomment below line if you want to navigate
+  //     // window.location.href = `/episode/${episodeNumber}`;
+  //   });
+  // });
     </script>
   </body>
 </html>
