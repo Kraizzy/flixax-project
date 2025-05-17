@@ -344,8 +344,11 @@ header{
   font-family: "Nunito", sans-serif;
   font-size: 1.5rem;
   display: flex;
-
   background: #FA528C;
+  transition: transform 0.3s ease-in-out;
+}
+.hero-content button:hover{
+  transform: scale(1.1);
 }
 .hero-content span{
   display: flex;
@@ -454,6 +457,9 @@ header{
   margin-top: 5px;
   text-align: left;
 }
+.cont-card:hover{
+  transform: scale(1:1);
+}
 .cont-card-content .title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -502,6 +508,10 @@ header{
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
   }
+  .cont-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
    /* Image inside card */
 .cont-card-image {
     width: 100%;
@@ -1420,11 +1430,11 @@ Filter Page CSS
 }
 .foryou-video-panel {
   position: relative;
-  width: 40%;
+  width: 35%;
   margin-top: 1rem;
   margin-left: 15rem;
   margin-right: 6rem;
-  max-height: 87vh;
+  max-height: 88vh;
   aspect-ratio: 9 / 16;
   background: #000;
   display: flex;
@@ -1435,7 +1445,7 @@ Filter Page CSS
 .video-cont {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -1447,10 +1457,11 @@ Filter Page CSS
   z-index: 2;
   width: 100%;
   display: flex;
+  box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
   pointer-events: auto;
-  /* background: rgba(0,0,0,0.3); Optional for visibility */
+  background: rgba(0,0,0,0.7); 
 }
 .right-control, 
 .left-control{
@@ -1680,7 +1691,26 @@ Filter Page CSS
 .hidden {
   display: none;
 }
+.progress-container {
+    flex-grow: 1;
+    padding: 0 0.25rem;
+}
 
+.progress-bar {
+    width: 100%;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+/* Customize the input range styling for track appearance */
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #f5c22a; /* your accent color */
+    border-radius: 50%;
+    cursor: pointer;
+}
 
 /* Episode styling  */
 
@@ -1689,6 +1719,7 @@ Filter Page CSS
   /* align-items: center; */
   height: 87%;
   width: 100%;
+  justify-content: space-between;
   /* background-color: #7FBBFF; */
   margin: 0rem auto;
   margin-top: 5.1rem;
@@ -1699,9 +1730,9 @@ Filter Page CSS
   width: 34%;
   margin-top: 1.8rem;
   margin-right: 6rem;
-  aspect-ratio: 9 / 16; /* or 4 / 3, or whatever ratio you want */
+  aspect-ratio: 9 / 16;
   background: #000;
-  max-height: 87vh;
+  max-height: 88vh;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -1710,7 +1741,7 @@ Filter Page CSS
 .video-cont {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* or 'contain' if you want the whole video visible */
+  object-fit: fill; /* or 'contain' if you want the whole video visible */
   display: block;
 }
 
@@ -1726,7 +1757,7 @@ Filter Page CSS
   justify-content: space-between;
   align-items: center;
   pointer-events: auto;
-  /* background: rgba(0,0,0,0.3); Optional for visibility */
+  background: rgba(0,0,0,0.3);
 }
 .episode-big-div{
   /* background-color: #FA528C; */
@@ -1735,15 +1766,28 @@ Filter Page CSS
   padding-left: 1.2rem;
   align-items: center;
   border-left: 1px solid gray;
-  width: 29%;
+  width: 30%;
 }
 .webkit-scroll-div{
   padding: 1.5rem;
   /* background-color: #5CA8FF; */
-  width: 86%;
+  width: 91.7%;
+  scrollbar-width: thin;
+  scrollbar-color: #0b1624 #222;
   max-height: 84vh;
   overflow-y: auto;
   overflow-x: hidden;
+}
+.webkit-scroll-div::-webkit-scrollbar {
+  width: 0.8rem; /* Adjust scrollbar width */
+}
+.webkit-scroll-div::-webkit-scrollbar-track {
+  background: #212121; /* Scrollbar background (track) */
+}
+.webkit-scroll-div::-webkit-scrollbar-thumb {
+  background-color: #828282; /* Scrollbar handle */
+  border-radius: 0.5rem;       /* Optional: rounded corners */
+  border: 1px solid #ccc; /* Creates padding inside the track */
 }
 .path-dir a{
   color: #7A7A7A;
@@ -1905,7 +1949,7 @@ Filter Page CSS
 }
 .back-arrow{
   display: flex;
-  margin: 1.8rem auto;
+  margin: 1.8rem 3rem;
   width: 3.125rem;
   height: 3.125rem;
   padding: 0.35rem;
@@ -1918,7 +1962,7 @@ Filter Page CSS
 }
 .eps-episode-grid {
   display: grid;
-  grid-template-columns: repeat(6, 4.14rem);
+  grid-template-columns: repeat(6, 4.54rem);
   grid-template-rows: repeat(4, 4.262rem);
   gap: 1.57rem 0.85rem;
   /* height: 20rem; */
